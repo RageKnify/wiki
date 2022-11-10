@@ -1,0 +1,1013 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+    
+    
+      
+        <title>Dc3 digital forensics challenge - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dc3-challenge" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dc3 digital forensics challenge
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../community/" class="md-tabs__link">
+        Community
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributions_mediawiki/" class="md-tabs__link">
+        Contributions
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tags/" class="md-tabs__link">
+        Tags
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Community
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Community" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Contributions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Contributions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributions_mediawiki/" class="md-nav__link">
+        Contributions Mediawiki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tags
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tags" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tags
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dc3-challenge" class="md-nav__link">
+    DC3 Challenge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2006-dc3-digital-forensics-challenge" class="md-nav__link">
+    2006 DC3 Digital Forensics Challenge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2007-dc3-digital-forensics-challenge" class="md-nav__link">
+    2007 DC3 Digital Forensics Challenge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2008-dc3-digital-forensics-challenge" class="md-nav__link">
+    2008 DC3 Digital Forensics Challenge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2009-dc3-digital-forensics-challenge" class="md-nav__link">
+    2009 DC3 Digital Forensics Challenge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2010-dc3-digital-forensics-challenge" class="md-nav__link">
+    2010 DC3 Digital Forensics Challenge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2011-dc3-digital-forensics-challenge" class="md-nav__link">
+    2011 DC3 Digital Forensics Challenge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2012-dc3-digital-forensics-challenge" class="md-nav__link">
+    2012 DC3 Digital Forensics Challenge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-links" class="md-nav__link">
+    External Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+  <nav class="md-tags" >
+    
+      
+      
+        <a href="../tags/#no-category" class="md-tag">No Category</a>
+      
+    
+  </nav>
+
+
+
+
+  <h1>Dc3 digital forensics challenge</h1>
+
+<h2 id="dc3-challenge">DC3 Challenge</h2>
+<p><a href="http://www.dc3.mil/challenge/">DC3 Digital Forensics Challenge</a> The
+annual DC3 Digital Forensics Challenge is a global, online competition
+comprised of individual, progressive-level, digital forensic exercises.
+The purpose of the challenge is to promote and generate interest in
+digital forensics; establish relationships within the digital forensics
+community; address the major obstacles and dilemmas confronting digital
+forensics investigators and examiners; and develop new tools,
+techniques, and methodologies. Throughout the 10 1/2 month contest
+starting on 15 Dec each year, teams can register and submit their
+solutions. Regardless of registration date, all final submissions are
+due the following 1 Nov. The DC3 Digital Forensics Challenge is a global
+contest and has multiple winning categories:</p>
+<p>- High School</p>
+<p>- Community College</p>
+<p>- Undergrad</p>
+<p>- Post Grad</p>
+<p>- Civilian</p>
+<p>- Commercial</p>
+<p>- US Government</p>
+<p>- US Military</p>
+<p>Most categories are divided by US &amp; International (non-US) and global
+overall winner. Winners can receive hardware, software, internships,
+training, trips to our DOD Cyber Crime Conference (Jan 2013), gift
+cards, and more.</p>
+<p><strong>DC3 Maryland Digital Forensics Challenge</strong> <a href="http://www.dc3.mil/challenge/2012/about/states/md.php/">DC3 Maryland
+Challenge</a></p>
+<p>From education and training to employment opportunities, Maryland has
+become the epicenter for cyber crime investigations and cybersecurity.
+DC3 has created the DC3 Maryland Digital Forensics Challenge a subset of
+the overall DC3 Digital Forensics Challenge to encourage Marylanders to
+participate and to consider digital forensics as a possible career path.
+Participants residing in Maryland will be eligible to receive a special
+recognition at the close of 2012 in addition to their general DC3
+Digital Forensics Challenge prize eligibility.</p>
+<p>The DC3 Maryland Digital Forensics Challenge is open to all individuals
+physically residing in Maryland at the time of submission.</p>
+<h2 id="2006-dc3-digital-forensics-challenge">2006 DC3 Digital Forensics Challenge</h2>
+<p>The 2006 Challenge provided unique tests that included: Audio
+steganography, real vs. computer generated image analysis, Linux
+<a href="logical_volume_manager_(linux).md">LVM</a> data carving, and
+recovering data from destroyed floppy disks and CDs. With 140 teams
+total, and 21 submissions entered, AccessData won the 2006 event.</p>
+<h2 id="2007-dc3-digital-forensics-challenge">2007 DC3 Digital Forensics Challenge</h2>
+<p>The 2007 Challenge introduced new topics, such as:
+<a href="bitlocker.md">Bitlocker</a> cracking and recovering data from
+destroyed USB thumb drives. With 126 teams competing, and 11 entries
+submitted, a team of students from the <a href="air_force_institute_of_technology.md">Air Force Institute of
+Technology</a> won the event.</p>
+<h2 id="2008-dc3-digital-forensics-challenge">2008 DC3 Digital Forensics Challenge</h2>
+<p>Beginning with the 2008 Challenge, the contest was broken into four
+skill levels: Novice, Skilled, Expert, and Genius. New challenges
+included: detection of malicious software, partition recovery, file
+header reconstruction, <a href="../skype/">Skype</a> analysis, and foreign
+text identification and translation. With 199 teams competing, and 20
+entries submitted, the competition was won by Chris Eagle and Tim Vidas
+of the <a href="naval_postgraduate_school.md">Naval Postgraduate
+School</a>. The 2008 Challenge also
+marked the first time that all results were released publicly.</p>
+<h2 id="2009-dc3-digital-forensics-challenge">2009 DC3 Digital Forensics Challenge</h2>
+<p>A total of 1,153 teams from 49 states and 61 countries applied to enter
+the 2009 DC3 Challenge. This is an increase from 223 teams from 40
+states and 26 countries entered in 2008. Of that number of teams in
+2009, 44 teams submitted solution packets back to FX for grading.</p>
+<p><strong>2009 Sponsors</strong></p>
+<p><strong>SANS Institute for the U.S. High School and U.S. Undergraduate
+prizes</strong></p>
+<p>The SysAdmin, Audit, Network, Security (SANS) Institute is the most
+trusted and by far the largest source for information security training
+and certification in the world. It also develops, maintains, and makes
+available at no cost, the largest collection of research documents about
+various aspects of information security, and it operates the Internet's
+early warning system - Internet Storm Center. SANS is also a sponsor in
+the Center for Strategic &amp; International Studies US Cyber Challenge.</p>
+<p><strong>IMPACT for the Non-U.S. prize</strong></p>
+<p>The International Multilateral Partnership Against Cyber-Threats
+(IMPACT) and the Department of Defense Cyber Crime Center have partnered
+to provide a Digital Forensic Challenge opportunity for non-U.S.
+entries. This opportunity will provide an international aspect to a
+previously U.S.-based event and allow additional insight into global
+methods to fight cyber crime.</p>
+<p><strong>2009 Winners' Circle</strong></p>
+<p>With the four available prizes for 2009, the official winners of the
+Challenger were:</p>
+<table>
+<thead>
+<tr>
+<th>Prize</th>
+<th>Team</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DC3 Prize (U.S. Winner)</td>
+<td>Little Bobby Tables</td>
+<td>1,772</td>
+</tr>
+<tr>
+<td>SANS Prize - High School (U.S.)</td>
+<td>pwnage</td>
+<td>1,309</td>
+</tr>
+<tr>
+<td>SANS Prize - Undergraduate (U.S.)</td>
+<td>WilmU</td>
+<td>1,732</td>
+</tr>
+<tr>
+<td>IMPACT Prize (International &amp; Overall)</td>
+<td>DFRC</td>
+<td>2,014</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2010-dc3-digital-forensics-challenge">2010 DC3 Digital Forensics Challenge</h2>
+<p>A total of 1010 teams from 48 states and 53 countries applied to enter
+the 2010 DC3 Challenge. This is a 12% decrease in team applications from
+1,153 teams from 49 states and 61 countries entered in 2009. Of that
+number of teams in 2010, 70 teams submitted solution packets back to FX
+for grading. This is a 59% increase in the number of submissions
+returned to the DC3 Challenge from 2009 with 44 submissions returned.</p>
+<p><strong>2010 Sponsors</strong></p>
+<p>New in 2010, several new sponsors provided additional prizes to allow
+for multiple winners:</p>
+<p><strong>SANS Institute for the U.S. High School and U.S. Undergraduate
+prizes</strong></p>
+<p>The <a href="../sans_institute/">SysAdmin, Audit, Network, Security (SANS)
+Institute</a> is the most trusted and by far the
+largest source for information security training and certification in
+the world. It also develops, maintains, and makes available at no cost,
+the largest collection of research documents about various aspects of
+information security, and it operates the Internet's early warning
+system - Internet Storm Center. SANS is also a sponsor in the Center for
+Strategic &amp; International Studies US Cyber Challenge.</p>
+<p><strong>IMPACT for the Non-U.S. prize</strong></p>
+<p>The <a href="impact.md">International Multilateral Partnership Against
+Cyber-Threats</a> and the Department of Defense
+Cyber Crime Center have partnered to provide a Digital Forensic
+Challenge opportunity for non-U.S. entries. This opportunity will
+provide an international aspect to a previously U.S.-based event and
+allow additional insight into global methods to fight cyber crime.</p>
+<p>The winner(s) of the International category from an IMPACT-member
+country will be eligible to fly to Malaysia for a tour of the IMPACT
+facility in Cyberjaya, official presentation of a commemorative plaque
+and potential grants of EC-Council and SANS courses.</p>
+<p><strong>EC-Council for US Government, US Military, Commercial, and Civilian
+individual prizes</strong></p>
+<p>The <a href="international_council_of_electronic_commerce_consultants.md">International Council of Electronic Commerce
+Consultants</a>
+(EC-Council) is a world leader in Information Security Certification and
+Training. With over 450 training locations for it’s information security
+courses in over 60 countries, it is a world leader in technical training
+and certification for the Information Security community. It is a
+trusted source for vendor neutral Information Security training
+solutions. EC-Council and DC3 have partnered to expand prize awards
+opportunities for our DC3 Digital Forensic Challenge. EC-Council will
+sponsor the categories of:</p>
+<ul>
+<li>U.S. Government</li>
+<li>U.S. Military</li>
+<li>Civilian for all U.S. and non-U.S. entries</li>
+<li>Commercial teams for all U.S. and non-U.S. entries</li>
+</ul>
+<p>The winning teams of the Civilian, Commercial, Government, and Military
+categories will receive the following prizes for up to 4 members from
+the EC-Council:</p>
+<ul>
+<li>A Plaque</li>
+<li>A pass to the Hacker Halted Conference to winners worth \$1799 each</li>
+<li>Any free EC-Council electronic course ware of choice for the winners
+  on Ethical Hacking, Computer Forensic, Security Analysis or Disaster
+  Recovery worth \$650 each</li>
+</ul>
+<p><strong>JHU for Community College Participants</strong></p>
+<p>The <a href="john_hopkins_university.md">John Hopkins University (JHU) Carey School for
+Business</a> as part of CyberWatch will
+be awarding a prize for the team with the highest score that is also
+enrolled in a community college.</p>
+<p>The Johns Hopkins/CyberWatch (JHU/CW) winning team will be recognized as
+the academic leader at the U.S. Community College level. The winning
+team members will also be presented with an award to mark their
+outstanding achievement.</p>
+<p><strong>UK Cyber Security Challenge</strong></p>
+<p><a href="https://cybersecuritychallenge.org.uk/">Cyber Security Challenge UK</a>
+and DC3 have partnered together to provide an opportunity for teams
+consisting of all UK citizens residing in the UK. The UK Challenge
+winning team will be offered two prizes from Cyber Security Challenge
+UK:</p>
+<ul>
+<li>Two weeks at the new UK Cyber Security Academy, which develops the
+  skills required of next-generation cyber security specialists,
+  including courses on digital forensics, threat and risk management,
+  cyber-crime, and emerging security technologies.</li>
+<li>Invitations to take part in the Cyber Security Challenge UK’s
+  masterclass challenge to compete against other successful contestants
+  from other UK Challenge competitions.</li>
+</ul>
+<p><strong>2010 Winners' Circle</strong></p>
+<table>
+<thead>
+<tr>
+<th>Prize</th>
+<th>Team</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DC3 Prize (U.S. Winner)</td>
+<td>Williams Twin Forensics</td>
+<td>1,470</td>
+</tr>
+<tr>
+<td>SANS Prize - High School (U.S.)</td>
+<td>Crash Override</td>
+<td>361</td>
+</tr>
+<tr>
+<td>SANS Prize - Undergraduate (U.S.)</td>
+<td>Team Name</td>
+<td>1,129</td>
+</tr>
+<tr>
+<td>IMPACT Prize (International)</td>
+<td>DFRC</td>
+<td>3,297</td>
+</tr>
+<tr>
+<td>EC-COUNCIL Prize (US GOVT)</td>
+<td>LBPDCCID</td>
+<td>409</td>
+</tr>
+<tr>
+<td>EC-COUNCIL Prize (US Military)</td>
+<td>Batcheej</td>
+<td>88</td>
+</tr>
+<tr>
+<td>EC-COUNCIL Prize (Commercial)</td>
+<td>Little Tree</td>
+<td>1,791</td>
+</tr>
+<tr>
+<td>EC-COUNCIL Prize (Civilian)</td>
+<td>William Twins Forensics</td>
+<td>1,470</td>
+</tr>
+<tr>
+<td>JHU Prize (Community College)</td>
+<td>PWNsauce</td>
+<td>84</td>
+</tr>
+<tr>
+<td>UK Cyber Security Challenge</td>
+<td>Mine Inc</td>
+<td>352</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2011-dc3-digital-forensics-challenge">2011 DC3 Digital Forensics Challenge</h2>
+<p>A total of 1147 teams from 50 states and 52 countries applied to enter
+the 2011 DC3 Challenge. This is a 3% increase in team applications from
+1,110 teams from 48 states and 53 countries entered in 2010. Of that
+number of teams in 2011, 174 teams submitted solution packets back to FX
+for grading. This is a 149% increase in the number of submissions
+returned to the DC3 Challenge from 2010 with 70 submissions returned.</p>
+<p><strong>2011 Sponsors</strong></p>
+<p>Sponsor participation increased significantly with both the number of
+sponsors and the number of categories each sponsor supported.</p>
+<p><strong><em>The SysAdmin, Audit, Network, Security (SANS) Institute:</em></strong> SANS
+sponsored the 1st place US High School, Undergraduate, and Graduate
+categories offering a trip to the 2012 DoD Cyber Crime Conference
+(conference fee not included) for up to 4 team members.</p>
+<p><strong><em>IMPACT:</em></strong> IMPACT sponsored the 1st place Non-US Winner offering a
+trip to Malaysia for IMPACT training.</p>
+<p><strong><em>JHU/CyberWatch:</em></strong> John Hopkins University (JHU) along with
+CyberWatch sponsored the 1st US Community College Winner offering
+scholarship money to up to 4 team members.</p>
+<p><strong><em>The EC-Council:</em></strong> The International Council of Electronic Commerce
+Consultants (EC-Council) sponsored the 1st place Non US Civilian,
+Commercial, High School, Undergraduate, and Graduate categories, in
+addition to the US Academic, Government, and Military categories. They
+offer teams a plaque, a pass to the Hacker Halted Conference, and any
+free EC-Council electronic courseware on Ethical Hacking, Computer
+Forensics, Security Analysis, or Disaster Recovery of their choice.</p>
+<p><strong><em>Cyber Security Challenge UK:</em></strong> The UK Challenge sponsored its own
+category offering the winning team of up to 4 members two weeks at the
+new UK Cyber Security Academy and an invitation to take part is the UK’s
+Masterclass Challenge.</p>
+<p><strong><em>Armed Forces Communications and Electronics Association (AFCEA)
+International</em></strong> AFCEA sponsored the 1st place US Government, Military,
+and Undergraduate categories offering a 1 year membership to their
+organization.</p>
+<p><strong><em>BlackBag Technologies:</em></strong> BlackBag sponsored the US Overall winning
+team offering BBT Forensic Kit for up to 4 team members.</p>
+<p><strong><em>National Institute of Standards and Technology Law Enforcement
+Standards Office (NIST OLES):</em></strong> NIST OLES sponsored the US Government
+Winner offering a trip to the 2012 DoD Cyber Crime Conference
+(conference fees excluded) for up to 4 team members.</p>
+<p><strong><em>Paraben :</em></strong> Paraben sponsored the 1st place US Undergraduate and 1st
+and 2nd Place US Government and Military categories offering the Paraben
+Device Seizure Software &amp; Toolbox to all teams and a paid internship to
+the Undergraduate winner(s).</p>
+<p><strong><em>The US Cyber Challenge (USCC):</em></strong> The USCC sponsored the 1st place US
+Undergraduate Winner offering a trip to the 2012 DoD Cyber Crime
+Conference (conference fees excluded) for up to 4 team members.</p>
+<p><strong><em>AccessData:</em></strong> AccessData sponsored the 1st place US Undergraduate
+Winner offering a copy of Access Data FTK current version, two free
+training classes (online or in classroom), a optional 60 Day internship,
+and paid travel expenses and hotel room</p>
+<p><strong><em>Dell:</em></strong> Dell sponsored the US Overall and US High School categories
+offering a Dell Streak 7 tablet for up to 4 team members.</p>
+<p><strong><em>McAfee:</em></strong> McAfee sponsored the US Community College Winner offering
+Skullcandy headphones, the Hacking Exposed book, McAfee Total Protection
+software, and a lunch box/sack for up to 4 team members.</p>
+<p><strong>2011 Winners' Circle</strong></p>
+<table>
+<thead>
+<tr>
+<th>CATEGORY (SPONSORS)</th>
+<th>TEAM NAME</th>
+<th># OF PLAYERS</th>
+<th>AFFILIATION</th>
+<th>POINTS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grand Champion (DC3)</td>
+<td>LoneWolf</td>
+<td>1</td>
+<td>Sabanci University, Turkey</td>
+<td>4,789</td>
+</tr>
+<tr>
+<td>Overall Civilian Winner (EC-Council)</td>
+<td>DFRC</td>
+<td>4</td>
+<td>University of South Korea, Korea</td>
+<td>2,762</td>
+</tr>
+<tr>
+<td>Overall Commercial Winner (EC-Council)</td>
+<td>Northrop Grumman</td>
+<td>4</td>
+<td>Northrop Grumman, United States</td>
+<td>3,471</td>
+</tr>
+<tr>
+<td>Overall High School (EC-Council)</td>
+<td>AlphaPHS</td>
+<td>4</td>
+<td>Poolesville High School , United States</td>
+<td>854</td>
+</tr>
+<tr>
+<td>Overall Undergraduate (EC-Council)</td>
+<td>SIGSEGV</td>
+<td>4</td>
+<td>Arizona State University, United States</td>
+<td>3,532</td>
+</tr>
+<tr>
+<td>Overall Graduate (EC-Council)</td>
+<td>LoneWolf</td>
+<td>1</td>
+<td>Sabanci University, Turkey</td>
+<td>4,789</td>
+</tr>
+<tr>
+<td>U.S. Overall Winner (DC3, BlackBag, Dell)</td>
+<td>SIGSEGV</td>
+<td>4</td>
+<td>Arizona State University, United States</td>
+<td>3,532</td>
+</tr>
+<tr>
+<td>U.S. Government Winner (EC-Council, AFCEA, NIST OLES, Paraben)</td>
+<td>0x90</td>
+<td>4</td>
+<td>Department of Defense, United States</td>
+<td>3,269</td>
+</tr>
+<tr>
+<td>U.S. Military Winner (EC-Council, AFCEA, Paraben)</td>
+<td>DCIS SEFO</td>
+<td>4</td>
+<td>Defense Criminal Investigative Service, United State</td>
+<td>1,105</td>
+</tr>
+<tr>
+<td>U.S. High school Winner (SANS)</td>
+<td>AlphaPHS</td>
+<td>4</td>
+<td>Poolesville High School , United States</td>
+<td>854</td>
+</tr>
+<tr>
+<td>U.S. Community College Winner (CyberWatch/JHU, CIS, McAfee)</td>
+<td>CSI-207-001</td>
+<td>4</td>
+<td>Anne Arundel Community College, United States</td>
+<td>924</td>
+</tr>
+<tr>
+<td>U.S. Undergraduate Winner (SANS, AFCEA, Paraben, Access Data)</td>
+<td>SIGSEGV</td>
+<td>4</td>
+<td>Arizona State University, United States</td>
+<td>3,532</td>
+</tr>
+<tr>
+<td>U.S. Graduate Winner (SANS)</td>
+<td>DSU MSIA-2</td>
+<td>1</td>
+<td>Dakota State University</td>
+<td>1,549</td>
+</tr>
+<tr>
+<td>Non-U.S. Overall Winner (IMPACT)</td>
+<td>LoneWolf</td>
+<td>1</td>
+<td>Sabanci University, Turkey</td>
+<td>4,789</td>
+</tr>
+<tr>
+<td>U.K. Overall Winner (UK Challenge, McAfee)</td>
+<td>Icarus</td>
+<td>1</td>
+<td>Lancaster University, United Kingdom</td>
+<td>2,098</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2012-dc3-digital-forensics-challenge">2012 DC3 Digital Forensics Challenge</h2>
+<p>The 2012 DC3 Digital Forensics Challenge is in progress. Final
+Submissions are due before 2 Nov 2012.</p>
+<h2 id="external-links">External Links</h2>
+<ul>
+<li><a href="http://www.dc3.mil/">DC3 Main</a></li>
+<li><a href="http://www.dc3.mil/challenge/2012">DC3 Digital Forensics Challenge</a></li>
+<li><a href="http://challenge.gov/AirForce/42-dc3-digital-forensics-challenge">1</a></li>
+<li><a href="http://csicyber.dfilink.net/">CSI Cyber</a></li>
+</ul>
+<p><a href="category:dc3_digital_forensics_challenge.md">Category:DC3 Digital Forensics
+Challenge</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+    
+  </body>
+</html>

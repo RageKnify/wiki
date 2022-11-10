@@ -1,0 +1,667 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+    
+    
+      
+        <title>Body file - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#shortcomings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Body file
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../community/" class="md-tabs__link">
+        Community
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributions_mediawiki/" class="md-tabs__link">
+        Contributions
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tags/" class="md-tabs__link">
+        Tags
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Community
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Community" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Contributions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Contributions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributions_mediawiki/" class="md-nav__link">
+        Contributions Mediawiki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tags
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tags" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tags
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shortcomings" class="md-nav__link">
+    Shortcomings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observed-behavior-sleuthkit" class="md-nav__link">
+    Observed behavior Sleuthkit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#also-see" class="md-nav__link">
+    Also see
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-links" class="md-nav__link">
+    External Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+  <nav class="md-tags" >
+    
+      
+      
+        <a href="../tags/#file-formats" class="md-tag">File Formats</a>
+      
+    
+      
+      
+        <a href="../tags/#linux" class="md-tag">Linux</a>
+      
+    
+      
+      
+        <a href="../tags/#windows" class="md-tag">Windows</a>
+      
+    
+      
+      
+        <a href="../tags/#macos" class="md-tag">MacOS</a>
+      
+    
+      
+      
+        <a href="../tags/#timeline-analysis" class="md-tag">Timeline Analysis</a>
+      
+    
+      
+      
+        <a href="../tags/#text" class="md-tag">Text</a>
+      
+    
+      
+      
+        <a href="../tags/#articles-that-need-to-be-expanded" class="md-tag">Articles that need to be expanded</a>
+      
+    
+  </nav>
+
+
+
+
+  <h1>Body file</h1>
+
+<p>Body file is a timeline format introduced by the
+<a href="sleuthkit.md">SleuthKit</a>.</p>
+<p>Version 2 (used by SleuhtKit 2):</p>
+<pre><code>MD5 | path/name | device | inode | mode_as_value | mode_as_string | num_of_links | UID | GID | rdev | size | atime | mtime | ctime | block_size | num_of_blocks
+</code></pre>
+<p>Version 3 (used by SleuhtKit 3 and later):</p>
+<pre><code>MD5|name|inode|mode_as_string|UID|GID|size|atime|mtime|ctime|crtime
+</code></pre>
+<p>The times are reported in a POSIX (or UNIX) timestamp.</p>
+<h3 id="shortcomings">Shortcomings</h3>
+<p>Known shortcomings with body file format are:</p>
+<ul>
+<li>Undocumented granularity of timestamp, current implementation by
+  <a href="sleuthkit.md">Sleuthkit</a> appears to be seconds
+  <a href="https://github.com/sleuthkit/sleuthkit/issues/1810">1</a></li>
+<li>Undocumented extended file mode of "-/-rwxrwxrwx"</li>
+<li>Undocumented and inconsistent application of TSK metadata addresses
+  <a href="https://github.com/sleuthkit/sleuthkit/issues/1809">2</a></li>
+<li>Undocumented and inconsistent application of owner UID
+  <a href="https://github.com/sleuthkit/sleuthkit/issues/1830">3</a></li>
+</ul>
+<p>This limits the portability of the body file format between tools.</p>
+<h3 id="observed-behavior-sleuthkit">Observed behavior Sleuthkit</h3>
+<p>Sleuthkit 4.7.0 was used to create the examples below:</p>
+<p>From the body file:</p>
+<p><code>0|/$BadClus|8-128-2|r/rr-xr-xr-x|0|0|0|1580550524|1580550524|1580550524|1580550524</code>
+<code>0|/$BadClus:$Bad|8-128-1|r/rr-xr-xr-x|0|0|7270400|1580550524|1580550524|1580550524|1580550524</code>
+<code>0|/$BadClus ($FILE_NAME)|8-48-3|r/rr-xr-xr-x|0|0|82|1580550524|1580550524|1580550524|1580550524</code></p>
+<p>Corresponding MFT entry:</p>
+<p><code>MFT Entry Header Values:</code>
+<code>Entry: 8        Sequence: 8</code>
+<code>$LogFile Sequence Number: 1069751</code>
+<code>Allocated File</code>
+<code>Links: 1</code>
+<code>`$STANDARD_INFORMATION Attribute Values:`
+`Flags: Hidden, System`
+`Owner ID: 0`
+`Security ID: 256  ()`
+`Created:    2020-02-01 10:48:44.857384500 (CET)`
+`File Modified:  2020-02-01 10:48:44.857384500 (CET)`
+`MFT Modified:   2020-02-01 10:48:44.857384500 (CET)`
+`Accessed:   2020-02-01 10:48:44.857384500 (CET)`</code>
+<code>$FILE_NAME Attribute Values:</code>
+<code>Flags: Hidden, System</code>
+<code>Name: $BadClus</code>
+<code>Parent MFT Entry: 5     Sequence: 5</code>
+<code>Allocated Size: 0       Actual Size: 0</code>
+<code>Created:    2020-02-01 10:48:44.857384500 (CET)</code>
+<code>File Modified:  2020-02-01 10:48:44.857384500 (CET)</code>
+<code>MFT Modified:   2020-02-01 10:48:44.857384500 (CET)</code>
+<code>Accessed:   2020-02-01 10:48:44.857384500 (CET)</code>
+<code>`</code>Attributes: <code></code>Type: $STANDARD_INFORMATION (16-0)   Name: N/A   Resident   size: 72<code></code>Type: $FILE_NAME (48-3)   Name: N/A   Resident   size: 82<code></code>Type: $DATA (128-2)   Name: N/A   Resident   size: 0<code></code>Type: $DATA (128-1)   Name: $Bad   Non-Resident   size: 7270400  init_size: 0`</p>
+<p>Behavior of the TSK Metadata Address:</p>
+<ul>
+<li>8-128-2 references the \$DATA attribute in MFT entry 8, note that this
+  \$DATA attribute on-disk is the 3rd attribute in the MFT entry.</li>
+<li>8-128-1 references the \$DATA attribute in MFT entry 8, note that this
+  \$DATA attribute on-disk is the 4th attribute in the MFT entry.</li>
+<li>8-48-3 references the first \$FILE_NAME attribute in MFT entry 8, note
+  that the \$FILE_NAME attribute on-disk is the 2nd attribute in the MFT
+  entry.</li>
+</ul>
+<p>From the body file:</p>
+<p><code>0|/$Extend|11-144-4|d/dr-xr-xr-x|0|0|552|1580550524|1580550524|1580550524|1580550524</code>
+<code>0|/$Extend ($FILE_NAME)|11-48-3|d/dr-xr-xr-x|0|0|80|1580550524|1580550524|1580550524|1580550524</code></p>
+<p>Corresponding MFT entry:</p>
+<p><code>MFT Entry Header Values:</code>
+<code>Entry: 11        Sequence: 11</code>
+<code>$LogFile Sequence Number: 1070011</code>
+<code>Allocated Directory</code>
+<code>Links: 1</code>
+<code>`$STANDARD_INFORMATION Attribute Values:`
+`Flags: Hidden, System`
+`Owner ID: 0`
+`Security ID: 257  ()`
+`Created:    2020-02-01 10:48:44.857384500 (CET)`
+`File Modified:  2020-02-01 10:48:44.857384500 (CET)`
+`MFT Modified:   2020-02-01 10:48:44.857384500 (CET)`
+`Accessed:   2020-02-01 10:48:44.857384500 (CET)`</code>
+<code>$FILE_NAME Attribute Values:</code>
+<code>Flags: Directory, Hidden, System</code>
+<code>Name: $Extend</code>
+<code>Parent MFT Entry: 5     Sequence: 5</code>
+<code>Allocated Size: 0       Actual Size: 0</code>
+<code>Created:    2020-02-01 10:48:44.857384500 (CET)</code>
+<code>File Modified:  2020-02-01 10:48:44.857384500 (CET)</code>
+<code>MFT Modified:   2020-02-01 10:48:44.857384500 (CET)</code>
+<code>Accessed:   2020-02-01 10:48:44.857384500 (CET)</code>
+<code>`</code>Attributes: <code></code>Type: $STANDARD_INFORMATION (16-0)   Name: N/A   Resident   size: 72<code></code>Type: $FILE_NAME (48-3)   Name: N/A   Resident   size: 80<code></code>Type: $INDEX_ROOT (144-4)   Name: $I30   Resident   size: 552`</p>
+<p>Behavior of the TSK Metadata Address:</p>
+<ul>
+<li>11-144-4 references the \$INDEX_ROOT attribute in MFT entry 11, note
+  that this \$INDEX_ROOT attribute on-disk is the 3rd attribute in the
+  MFT entry. Note that the size of a corresponding \$INDEX_ALLOCATION is
+  not included in the "size" in the body file.
+  <a href="https://github.com/sleuthkit/sleuthkit/issues/1831">4</a></li>
+</ul>
+<h2 id="also-see">Also see</h2>
+<ul>
+<li><a href="../mactime/">mactime</a></li>
+</ul>
+<h2 id="external-links">External Links</h2>
+<ul>
+<li><a href="http://wiki.sleuthkit.org/index.php?title=Body_file">Body file -
+  SleuthKit</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+    
+  </body>
+</html>

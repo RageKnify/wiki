@@ -1,0 +1,1271 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+    
+    
+      
+        <title>Jtag and chip off tools and equipment - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Jtag and chip off tools and equipment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../community/" class="md-tabs__link">
+        Community
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributions_mediawiki/" class="md-tabs__link">
+        Contributions
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tags/" class="md-tabs__link">
+        Tags
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Community
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Community" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Contributions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Contributions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributions_mediawiki/" class="md-nav__link">
+        Contributions Mediawiki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tags
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tags" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tags
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+  <nav class="md-tags" >
+    
+      
+      
+        <a href="../tags/#no-category" class="md-tag">No Category</a>
+      
+    
+  </nav>
+
+
+
+
+  <h1>Jtag and chip off tools and equipment</h1>
+
+<p>The following list contains equipment used for performing JTAG and
+chip-off analysis. It is noted when equipment is used for both
+procedures in order to avoid overlap and duplication of equipment. The
+URL's provided are for reference and other vendors and suppliers exist
+for said equipment. Please search Internet for other competitive
+vendors.</p>
+<p><em>Note: This equipment is not a definitive list and substitutions can be
+made for equivalent tools and equipment.</em></p>
+<p><strong>JTAG and Chip-Off Equipment List</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th>Info</th>
+<th>Estimated Cost (CAD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">iSeasamo Phone Opening Tool</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/97424_iSesamo_Opening_Tool.html">http://www.fonefunshop.co.uk/cable_picker/97424_iSesamo_Opening_Tool.html</a></td>
+<td>£6</td>
+</tr>
+<tr>
+<td align="left">iSeasamo Phone Opening Tool</td>
+<td><a href="http://teeltechcanada.com/equipment/">http://teeltechcanada.com/equipment/</a></td>
+<td>3 CAD</td>
+</tr>
+<tr>
+<td align="left">Carton SPZT-50PG Microscope (optional: w/trinocular)</td>
+<td><a href="http://valleymicroscope.com/shop/spz-50pg/">http://valleymicroscope.com/shop/spz-50pg/</a></td>
+<td>\$1200</td>
+</tr>
+<tr>
+<td align="left">BK-30A Microscope w/lamp</td>
+<td><a href="http://teeltechcanada.com/equipment/">http://teeltechcanada.com/equipment/</a></td>
+<td>\~200 CAD</td>
+</tr>
+<tr>
+<td align="left">Xytronic 988D Solder Rework Station</td>
+<td><a href="http://www.howardelectronics.com/xytronic/988d.html">http://www.howardelectronics.com/xytronic/988d.html</a></td>
+<td>\$300</td>
+</tr>
+<tr>
+<td align="left">T862D REWORK STATION</td>
+<td><a href="http://teeltechcanada.com/equipment/jtagchipoffisp-tools/t862d-rework-station/">http://teeltechcanada.com/equipment/jtagchipoffisp-tools/t862d-rework-station/</a></td>
+<td>\~ \$300 CAD</td>
+</tr>
+<tr>
+<td align="left">Weller WES51 Solder Station</td>
+<td>sourced locally (Electronics shop)</td>
+<td>\$100</td>
+</tr>
+<tr>
+<td align="left">FEITA DIGITAL INSPECTION STATION</td>
+<td><a href="http://teeltechcanada.com/equipment/feita-digital-inspection-station/">http://teeltechcanada.com/equipment/feita-digital-inspection-station/</a></td>
+<td>\$ 380 CAD</td>
+</tr>
+<tr>
+<td align="left">Xytronic LF-852D Hot Air Station</td>
+<td><a href="http://www.howardelectronics.com/xytronic/LF-852D.html">http://www.howardelectronics.com/xytronic/LF-852D.html</a></td>
+<td>\$225</td>
+</tr>
+<tr>
+<td align="left">HP Agilent U8002A Variable Power Supply</td>
+<td><a href="http://www.home.agilent.com/agilent/product.jspx?pn=u8002a&amp;cc=CA&amp;lc=eng">http://www.home.agilent.com/agilent/product.jspx?pn=u8002a&amp;cc=CA&amp;lc=eng</a></td>
+<td>\$400</td>
+</tr>
+<tr>
+<td align="left">Amprobe 35XP Multimeter</td>
+<td>sourced locally (Electronics shop)</td>
+<td>\$120</td>
+</tr>
+<tr>
+<td align="left">Magnifying Desk Lamp</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/600_Professional_Table_Lamp_With_10_Time_Magnifier.html">http://www.fonefunshop.co.uk/cable_picker/600_Professional_Table_Lamp_With_10_Time_Magnifier.html</a></td>
+<td>£40</td>
+</tr>
+<tr>
+<td align="left">Circuit board holder</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98201_PCB_Holder.html">http://www.fonefunshop.co.uk/cable_picker/98201_PCB_Holder.html</a></td>
+<td>£5</td>
+</tr>
+<tr>
+<td align="left">Circuit board holder</td>
+<td><a href="http://teeltechcanada.com/equipment/">http://teeltechcanada.com/equipment/</a></td>
+<td>\~ 5.00 CDN</td>
+</tr>
+<tr>
+<td align="left">Chip Epoxy Glue Remover</td>
+<td><a href="http://www.ebay.com/itm/BGA-IC-30ml-IC-BGA-CPU-Chip-Epoxy-Glue-Remover-Adhesive-Solution-Solvent-Liquid-/321012736931?pt=Digital_Camera_Accessories&amp;hash=item4abdd9a3a3">http://www.ebay.com/itm/BGA-IC-30ml-IC-BGA-CPU-Chip-Epoxy-Glue-Remover-Adhesive-Solution-Solvent-Liquid-/321012736931?pt=Digital_Camera_Accessories&amp;hash=item4abdd9a3a3</a></td>
+<td>\$10</td>
+</tr>
+<tr>
+<td align="left">0.040 gauge transformer winding wire</td>
+<td>sourced locally (Electronics shop)</td>
+<td>\$15</td>
+</tr>
+<tr>
+<td align="left">0.040 gauge Advanced Enameled Wire (0.09mm)</td>
+<td><a href="http://teeltechcanada.com/equipment/">http://teeltechcanada.com/equipment/</a></td>
+<td>5 roll \$1.00 CAD</td>
+</tr>
+<tr>
+<td align="left">30AWG Gauge Wrapping Wire - 9 colors 100 Ft. roll each</td>
+<td><a href="http://teeltechcanada.com/equipment/">http://teeltechcanada.com/equipment/</a></td>
+<td>\~90.00 CDN</td>
+</tr>
+<tr>
+<td align="left">Kester 44 rosin flux solder</td>
+<td>sourced locally (Electronics shop)</td>
+<td>\$50</td>
+</tr>
+<tr>
+<td align="left">Xcelite Hobby Knives</td>
+<td>sourced locally (Electronics shop)</td>
+<td>\$15</td>
+</tr>
+<tr>
+<td align="left">Terra Dexterity PVC foam gloves</td>
+<td>sourced locally (Costco)</td>
+<td>\$10</td>
+</tr>
+<tr>
+<td align="left">Richard 13321 blades</td>
+<td>sourced <a href="https://www.acklandsgrainger.com/AGIPortalWeb/WebSource/ProductDisplay/globalProductDetailDisplay.do?item_code=RCH13321">https://www.acklandsgrainger.com/AGIPortalWeb/WebSource/ProductDisplay/globalProductDetailDisplay.do?item_code=RCH13321</a></td>
+<td>\~\$10</td>
+</tr>
+<tr>
+<td align="left">HAKKO Omnivise C1390C Handle</td>
+<td><a href="https://multi-com.eu/shrt-DOuv7ERkA">https://multi-com.eu/shrt-DOuv7ERkA</a></td>
+<td>59 EUR</td>
+</tr>
+<tr>
+<td align="left">eMMC SCP-6 Platform</td>
+<td><a href="https://multi-com.eu/shrt-9VO20fDx">https://multi-com.eu/shrt-9VO20fDx</a></td>
+<td>22 EUR</td>
+</tr>
+<tr>
+<td align="left">BGA PMTC Sn63pb37 balls 0,35mm 12500 pcs</td>
+<td><a href="https://multi-com.eu/shrt-wsgZAFebz">https://multi-com.eu/shrt-wsgZAFebz</a></td>
+<td>3.5 EUR</td>
+</tr>
+<tr>
+<td align="left">BGA PMTC Sn63pb37 balls 0,30mm 12500 pcs</td>
+<td><a href="https://multi-com.eu/shrt-6XueZmYY">https://multi-com.eu/shrt-6XueZmYY</a></td>
+<td>3,5 EUR</td>
+</tr>
+<tr>
+<td align="left">Stencil Direct BGA for eMMC 153/169</td>
+<td><a href="https://multi-com.eu/shrt-DYvLsqOdj">https://multi-com.eu/shrt-DYvLsqOdj</a></td>
+<td>8 EUR</td>
+</tr>
+<tr>
+<td align="left">Stencil Direct BGA for eMMC 162/186</td>
+<td><a href="https://multi-com.eu/shrt-BbkGx3a2v">https://multi-com.eu/shrt-BbkGx3a2v</a></td>
+<td>8 EUR</td>
+</tr>
+<tr>
+<td align="left">Stencil Direct BGA for eMMC/eMCP 221</td>
+<td><a href="https://multi-com.eu/shrt-PHnHUQ81c">https://multi-com.eu/shrt-PHnHUQ81c</a></td>
+<td>8 EUR</td>
+</tr>
+<tr>
+<td align="left">Stencil Direct BGA for eMMC 529</td>
+<td><a href="https://multi-com.eu/shrt-rEDf77mMZ">https://multi-com.eu/shrt-rEDf77mMZ</a></td>
+<td>8 EUR</td>
+</tr>
+<tr>
+<td align="left">BGA stencil for Samsung S7 (SM-G930F)</td>
+<td><a href="https://multi-com.eu/shrt-ryvmlxmmM">https://multi-com.eu/shrt-ryvmlxmmM</a></td>
+<td>6.20 EUR</td>
+</tr>
+<tr>
+<td align="left">BGA stencil for Samsung S6 Edge (SM-G925F)</td>
+<td><a href="https://multi-com.eu/shrt-ZUSWn6UJ4">https://multi-com.eu/shrt-ZUSWn6UJ4</a></td>
+<td>6,20 EUR</td>
+</tr>
+<tr>
+<td align="left">BGA stencil for Samsung S6 (SM-G920F)</td>
+<td><a href="https://multi-com.eu/shrt-SJvvlLDs6">https://multi-com.eu/shrt-SJvvlLDs6</a></td>
+<td>6,20 EUR</td>
+</tr>
+<tr>
+<td align="left">BGA stencil for Samsung Galaxy S5 (SM-G900F)</td>
+<td><a href="https://multi-com.eu/shrt-NKSledHMz">https://multi-com.eu/shrt-NKSledHMz</a></td>
+<td>6.20 EUR</td>
+</tr>
+<tr>
+<td align="left">BGA stencil for Samsung Galaxy S4 (i9505)</td>
+<td><a href="https://multi-com.eu/shrt-zypMRksPB">https://multi-com.eu/shrt-zypMRksPB</a></td>
+<td>6.20 EUR</td>
+</tr>
+<tr>
+<td align="left">BGA stencil for Samsung Galaxy S4 (i9500)</td>
+<td><a href="https://multi-com.eu/shrt-eOAWZpv">https://multi-com.eu/shrt-eOAWZpv</a></td>
+<td>6,20 EUR</td>
+</tr>
+<tr>
+<td align="left">Ultra thin jumper wire/Copper spool wire 0.02mm/50m</td>
+<td><a href="https://multi-com.eu/shrt-8Vfgy5KDa">https://multi-com.eu/shrt-8Vfgy5KDa</a></td>
+<td>6,50 EUR</td>
+</tr>
+<tr>
+<td align="left">Desoldering Tape 80-2-5 Chemtronics Solder-Wick 1.5mm / 1.5m</td>
+<td><a href="https://multi-com.eu/shrt-jyfPDsUBG">https://multi-com.eu/shrt-jyfPDsUBG</a></td>
+<td>4,99 EUR</td>
+</tr>
+<tr>
+<td align="left">Isopropanol with sprayer 99.9% capacity of 150ml</td>
+<td><a href="https://multi-com.eu/shrt-68GYj9tj">https://multi-com.eu/shrt-68GYj9tj</a></td>
+<td>1,10 EUR</td>
+</tr>
+<tr>
+<td align="left">Anti-static mat PROSKIT 8BM-405A 60x120 cm</td>
+<td><a href="https://multi-com.eu/shrt-RKnvCEqDi">https://multi-com.eu/shrt-RKnvCEqDi</a></td>
+<td>36 EUR</td>
+</tr>
+<tr>
+<td align="left">Silicone service mat MAT-001 25x35cm</td>
+<td><a href="https://multi-com.eu/shrt-shQZmRJlh">https://multi-com.eu/shrt-shQZmRJlh</a></td>
+<td>9,50 EUR</td>
+</tr>
+<tr>
+<td align="left">13in1 spatula for removing and work with BGAs (Jabe)</td>
+<td><a href="https://multi-com.eu/shrt-4ldEVBltM">https://multi-com.eu/shrt-4ldEVBltM</a></td>
+<td>25 EUR</td>
+</tr>
+<tr>
+<td align="left">Precision scalpel/ penknife with 10 removable blades</td>
+<td><a href="https://multi-com.eu/shrt-tjwn2AeL5">https://multi-com.eu/shrt-tjwn2AeL5</a></td>
+<td>7 EUR</td>
+</tr>
+<tr>
+<td align="left">Precision tweezer straight and narrow Rhino RH-11</td>
+<td><a href="https://multi-com.eu/shrt-gQMvZJrKa">https://multi-com.eu/shrt-gQMvZJrKa</a></td>
+<td>10 EUR</td>
+</tr>
+<tr>
+<td align="left">Ceramic Tweezers / Tweezers VETUS - T2</td>
+<td><a href="https://multi-com.eu/shrt-J6QmzXKK">https://multi-com.eu/shrt-J6QmzXKK</a></td>
+<td>10 EUR</td>
+</tr>
+<tr>
+<td align="left">Solder Fume Extractor ZD-153</td>
+<td><a href="https://multi-com.eu/shrt-jJKs1dJyk">https://multi-com.eu/shrt-jJKs1dJyk</a></td>
+<td>22 EUR</td>
+</tr>
+<tr>
+<td align="left">Quick 6101 Fume Extractor</td>
+<td><a href="https://multi-com.eu/shrt-Ykqc8076p">https://multi-com.eu/shrt-Ykqc8076p</a></td>
+<td>479 EUR</td>
+</tr>
+<tr>
+<td align="left">Air Ionizer Dr. Schneider SL-001</td>
+<td><a href="https://multi-com.eu/shrt-J4MuEP1cM">https://multi-com.eu/shrt-J4MuEP1cM</a></td>
+<td>105 EUR</td>
+</tr>
+<tr>
+<td align="left">8" x 8" x 3/8" steel plate</td>
+<td>sourced locally (Steel fabrication shop)</td>
+<td>free</td>
+</tr>
+</tbody>
+</table>
+<p><strong>JTAG Specific Equipment List</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th>Info</th>
+<th>Estimated Cost (CAD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">RIFF Box</td>
+<td><a href="http://www.fonefunshop.co.uk/Unlocking/riff_box.htm">http://www.fonefunshop.co.uk/Unlocking/riff_box.htm</a></td>
+<td>Approx £130</td>
+</tr>
+<tr>
+<td align="left">RIFF Box w/ISP</td>
+<td><a href="http://teeltechcanada.com/equipment/jtag-flasher-boxes/riff-box/">http://teeltechcanada.com/equipment/jtag-flasher-boxes/riff-box/</a></td>
+<td>Approx 230.00 CDN</td>
+</tr>
+<tr>
+<td align="left">RIFF Box 2 (JTAG and EMMC)</td>
+<td><a href="https://multi-com.eu/shrt-umy50YIiG">https://multi-com.eu/shrt-umy50YIiG</a></td>
+<td>159 EUR</td>
+</tr>
+<tr>
+<td align="left">Octoplus Box</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98824_Octoplus_Box_With_Samsung_LG_and_JTAG_Activation.html">http://www.fonefunshop.co.uk/cable_picker/98824_Octoplus_Box_With_Samsung_LG_and_JTAG_Activation.html</a></td>
+<td>Approx. £270</td>
+</tr>
+<tr>
+<td align="left">Octoplus JTAG Box (JTAG)</td>
+<td><a href="https://multi-com.eu/shrt-BCfTRSQlD">https://multi-com.eu/shrt-BCfTRSQlD</a></td>
+<td>149 EUR</td>
+</tr>
+<tr>
+<td align="left">Octoplus Box Cables/JTAG/LG/SAM</td>
+<td><a href="http://teeltechcanada.com/equipment/jtag-flasher-boxes/octoplus-box/">http://teeltechcanada.com/equipment/jtag-flasher-boxes/octoplus-box/</a></td>
+<td>Approx. 450.00 CDN</td>
+</tr>
+<tr>
+<td align="left">Z3X Easy-Jtag Box</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/97487_Z3X_Easy-Jtag_Box.html">http://www.fonefunshop.co.uk/cable_picker/97487_Z3X_Easy-Jtag_Box.html</a></td>
+<td>Approxx £130</td>
+</tr>
+<tr>
+<td align="left">Easy JTAG Z3X Box (JTAG and EMMC)</td>
+<td><a href="https://multi-com.eu/shrt-9VJ7td493">https://multi-com.eu/shrt-9VJ7td493</a></td>
+<td>149 EUR</td>
+</tr>
+<tr>
+<td align="left">Z3X Easy-Jtag Box</td>
+<td><a href="http://teeltechcanada.com/equipment/jtag-flasher-boxes/z3x-easy-jtag-box/">http://teeltechcanada.com/equipment/jtag-flasher-boxes/z3x-easy-jtag-box/</a></td>
+<td>\~ 225.00 CAD</td>
+</tr>
+<tr>
+<td align="left">GPGEMMC Box</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/97506_GPGEMMC_Box.html">http://www.fonefunshop.co.uk/cable_picker/97506_GPGEMMC_Box.html</a></td>
+<td>Approx. £160</td>
+</tr>
+<tr>
+<td align="left">GPG JTAG Box (JTAG PRO)</td>
+<td><a href="https://multi-com.eu/shrt-rF5Y17ygT">https://multi-com.eu/shrt-rF5Y17ygT</a></td>
+<td>135 EUR</td>
+</tr>
+<tr>
+<td align="left">ATF (Advance Turbo Flasher)</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/96545_ATF_Nitro_(Advance_Turbo_Flasher_Nitro_Pre-Activated_With_ATF_Network_Account).html">http://www.fonefunshop.co.uk/cable_picker/96545_ATF_Nitro_(Advance_Turbo_Flasher_Nitro_Pre-Activated_With_ATF_Network_Account).html</a></td>
+<td>Approx. £110</td>
+</tr>
+<tr>
+<td align="left">ATF (Advance Turbo Flasher)</td>
+<td><a href="http://teeltechcanada.com/equipment/jtag-flasher-boxes/atf-advance-turbo-flasher/">http://teeltechcanada.com/equipment/jtag-flasher-boxes/atf-advance-turbo-flasher/</a></td>
+<td>\~ 200.00 CDN</td>
+</tr>
+<tr>
+<td align="left">ATF GOLD (Advance Turbo Flasher for JTAG, EMMC, SPI)</td>
+<td><a href="https://multi-com.eu/shrt-eMByEzFy">https://multi-com.eu/shrt-eMByEzFy</a></td>
+<td>159 EUR</td>
+</tr>
+<tr>
+<td align="left">GPGJTAG Box (Jtag Pro)</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/96415_GPGJTAG_Box_(Jtag_Pro).html">http://www.fonefunshop.co.uk/cable_picker/96415_GPGJTAG_Box_(Jtag_Pro).html</a></td>
+<td>Approx. £120</td>
+</tr>
+<tr>
+<td align="left">GPGJTAG Box (Jtag Pro)</td>
+<td><a href="http://teeltechcanada.com/equipment/jtag-flasher-boxes/gpg-jtag-box-jtag-pro/">http://teeltechcanada.com/equipment/jtag-flasher-boxes/gpg-jtag-box-jtag-pro/</a></td>
+<td>\~ 190.00 CDN</td>
+</tr>
+<tr>
+<td align="left">ORT Box</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/95814_GPGORT_(Bulit_with_Omnia_Repair_Tool_DNA_).html">http://www.fonefunshop.co.uk/cable_picker/95814_GPGORT_(Bulit_with_Omnia_Repair_Tool_DNA_).html</a></td>
+<td>Approx. £140</td>
+</tr>
+<tr>
+<td align="left">OMNIA REPAIR TOOL (ORT) JTAG PRO EDITION</td>
+<td><a href="http://teeltechcanada.com/equipment/jtag-flasher-boxes/omnia-repair-tool-ort-jtag-pro-edition/">http://teeltechcanada.com/equipment/jtag-flasher-boxes/omnia-repair-tool-ort-jtag-pro-edition/</a></td>
+<td>\~ 175.00 CAD</td>
+</tr>
+<tr>
+<td align="left">ORT JTAG Pro with EMMC Booster (JTAG and EMMC)</td>
+<td><a href="https://multi-com.eu/shrt-CtwRi9jbK">https://multi-com.eu/shrt-CtwRi9jbK</a></td>
+<td>149 EUR</td>
+</tr>
+<tr>
+<td align="left">MEDUSA PRO eMMC Edition</td>
+<td><a href="http://teeltechcanada.com/equipment/jtag-flasher-boxes/medusa-pro/">http://teeltechcanada.com/equipment/jtag-flasher-boxes/medusa-pro/</a></td>
+<td>\~ 250.00.00 CAD</td>
+</tr>
+<tr>
+<td align="left">Medusa Pro Box (JTAG and EMMC)</td>
+<td><a href="https://multi-com.eu/shrt-EZulxq5x">https://multi-com.eu/shrt-EZulxq5x</a></td>
+<td>159 EUR</td>
+</tr>
+<tr>
+<td align="left">Medusa Box</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/95798_Medusa_Box.html">http://www.fonefunshop.co.uk/cable_picker/95798_Medusa_Box.html</a></td>
+<td>Approx £155</td>
+</tr>
+<tr>
+<td align="left">UFI BOX (JTAG, EMMC, SPI)</td>
+<td><a href="https://multi-com.eu/shrt-cywZ3uIue">https://multi-com.eu/shrt-cywZ3uIue</a></td>
+<td>299 EUR</td>
+</tr>
+<tr>
+<td align="left">Programmer UFS / eMMC / eMCP NuProg-E</td>
+<td><a href="https://multi-com.eu/shrt-tM9BbwHX1">https://multi-com.eu/shrt-tM9BbwHX1</a></td>
+<td>1149 EUR</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Add-On Tools / Adapters For JTAG Specific Equipment List</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th>Info</th>
+<th>Estimated Cost (CAD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">E-Mate E-Socket 5-in-1 High Speed EMMC Programmer for ATF - Z3x-Pro - GPGEMMC</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98324_E-Mate_E-Socket_5-in-1_High_Speed_EMMC_Programmer_for_ATF_-_Z3x-Pro_-_GPGEMMC.html">http://www.fonefunshop.co.uk/cable_picker/98324_E-Mate_E-Socket_5-in-1_High_Speed_EMMC_Programmer_for_ATF_-_Z3x-Pro_-_GPGEMMC.html</a></td>
+<td>Approx £160</td>
+</tr>
+<tr>
+<td align="left">E-Mate Pro eMMC Tool MoorC v2</td>
+<td><a href="https://multi-com.eu/shrt-Yeh3t5Zph">https://multi-com.eu/shrt-Yeh3t5Zph</a></td>
+<td>129 EUR</td>
+</tr>
+<tr>
+<td align="left">BGA Adapter 162 For GPGEMMC Box</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/97948_BGA_Adapter_162_For_GPGEMMC_Box.html">http://www.fonefunshop.co.uk/cable_picker/97948_BGA_Adapter_162_For_GPGEMMC_Box.html</a></td>
+<td>Approx. £64</td>
+</tr>
+<tr>
+<td align="left">BGA Adapter 169E For GPGEMMC Box</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/97949_BGA_Adapter_169E_For_GPGEMMC_Box.html">http://www.fonefunshop.co.uk/cable_picker/97949_BGA_Adapter_169E_For_GPGEMMC_Box.html</a></td>
+<td>Approx. £64</td>
+</tr>
+<tr>
+<td align="left">BGA221 Adapter Socket For E-Mate Box - Riff Box - GPGEMMC Box</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/99340_BGA221_Adapter_Socket_For_E-Mate_Box_-_Riff_Box_-_GPGEMMC_Box.html">http://www.fonefunshop.co.uk/cable_picker/99340_BGA221_Adapter_Socket_For_E-Mate_Box_-_Riff_Box_-_GPGEMMC_Box.html</a></td>
+<td>Approx. £90</td>
+</tr>
+<tr>
+<td align="left">MOORC JTAG-ISP Adapter 5-in-1 For ATF, Riff, Medusa etc.</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/99009_MOORC_JTAG-ISP_Adapter_5-in-1.html">http://www.fonefunshop.co.uk/cable_picker/99009_MOORC_JTAG-ISP_Adapter_5-in-1.html</a></td>
+<td>Approxx £25</td>
+</tr>
+<tr>
+<td align="left">ATF EMMC Test Point Finder</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/99070_ATF_EMMC_Test_Point_Finder.html">http://www.fonefunshop.co.uk/cable_picker/99070_ATF_EMMC_Test_Point_Finder.html</a></td>
+<td>Approx. £160</td>
+</tr>
+<tr>
+<td align="left">Universal JTAG/eMMC/FBUS JE-02 adapter</td>
+<td><a href="https://multi-com.eu/shrt-1LRdjoD4f">https://multi-com.eu/shrt-1LRdjoD4f</a></td>
+<td>15 EUR</td>
+</tr>
+<tr>
+<td align="left">Set of Universal JTAG adapters VF-JIG for VR-Table - 11R</td>
+<td><a href="https://multi-com.eu/shrt-4xQHA1ch">https://multi-com.eu/shrt-4xQHA1ch</a></td>
+<td>219 EUR</td>
+</tr>
+<tr>
+<td align="left">Adapter eMMC/JTAG for Riff BOX 2 - RC2000</td>
+<td><a href="https://multi-com.eu/shrt-05fPVWcCP">https://multi-com.eu/shrt-05fPVWcCP</a></td>
+<td>10 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG Finder</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98093_JTAG_Finder.html">http://www.fonefunshop.co.uk/cable_picker/98093_JTAG_Finder.html</a></td>
+<td>Approx. £90</td>
+</tr>
+<tr>
+<td align="left">EMMC Z3X Jtag Pro 3 in 1 Adapter</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98025_EMMC_Z3X_Jtag_Pro_3_in_1_Adapter.html">http://www.fonefunshop.co.uk/cable_picker/98025_EMMC_Z3X_Jtag_Pro_3_in_1_Adapter.html</a></td>
+<td>Approx. £20</td>
+</tr>
+<tr>
+<td align="left">Universal JTAG Interface</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/95869_Universal_JTAG_Interface.html">http://www.fonefunshop.co.uk/cable_picker/95869_Universal_JTAG_Interface.html</a></td>
+<td>Approx. £5</td>
+</tr>
+<tr>
+<td align="left">Universal Jtag Cable With Labeled Wires</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/96614_Universal_Jtag_Cable_With_Labeled_Wires.html">http://www.fonefunshop.co.uk/cable_picker/96614_Universal_Jtag_Cable_With_Labeled_Wires.html</a></td>
+<td>Approx. £5</td>
+</tr>
+<tr>
+<td align="left">SD-EMMC Plus Adapter - Model SE-P1</td>
+<td><a href="https://multi-com.eu/shrt-iLrv4Jo0J">https://multi-com.eu/shrt-iLrv4Jo0J</a></td>
+<td>12 EUR</td>
+</tr>
+<tr>
+<td align="left">Frames / Limiters adapters for BGA (spacer)</td>
+<td><a href="https://multi-com.eu/shrt-QLo4A3gFd">https://multi-com.eu/shrt-QLo4A3gFd</a></td>
+<td>10 EUR</td>
+</tr>
+<tr>
+<td align="left">Probe Cable For Riff Box</td>
+<td>Manually locate jtag lines for unsupported devices - <a href="http://www.fonefunshop.co.uk/cable_picker/98043_Probe_Cable_For_Riff_Box.html">http://www.fonefunshop.co.uk/cable_picker/98043_Probe_Cable_For_Riff_Box.html</a></td>
+<td>Approx £5</td>
+</tr>
+<tr>
+<td align="left">Powered Mini USB - Micro USB Cable For Repair and Jtag</td>
+<td>Power phones and dump via usb while phone disassembled - <a href="http://www.fonefunshop.co.uk/cable_picker/98057_Powered_Mini_USB_-_Micro_USB_Cable_For_Repair_and_Jtag.html">http://www.fonefunshop.co.uk/cable_picker/98057_Powered_Mini_USB_-_Micro_USB_Cable_For_Repair_and_Jtag.html</a></td>
+<td>Approx £10</td>
+</tr>
+<tr>
+<td align="left">Fonefunshop Test Point Box</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/286_Fonefunshop_Test_Point_Box.html">http://www.fonefunshop.co.uk/cable_picker/286_Fonefunshop_Test_Point_Box.html</a></td>
+<td>Approx £30</td>
+</tr>
+<tr>
+<td align="left">JTAG AMOI adapters</td>
+<td><a href="https://multi-com.eu/shrt-QlZHD70PS">https://multi-com.eu/shrt-QlZHD70PS</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG DELL adapters</td>
+<td><a href="https://multi-com.eu/shrt-oBHcKhgVM">https://multi-com.eu/shrt-oBHcKhgVM</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG BenQ-Siemens adapters</td>
+<td><a href="https://multi-com.eu/shrt-Slmpqmm8">https://multi-com.eu/shrt-Slmpqmm8</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG Toshiba adapters</td>
+<td><a href="https://multi-com.eu/shrt-Gsx2ifoA6">https://multi-com.eu/shrt-Gsx2ifoA6</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">Jtag Adapters For HTC</td>
+<td><a href="http://www.fonefunshop.co.uk/Unlocking/sagemjigs.htm#htc">http://www.fonefunshop.co.uk/Unlocking/sagemjigs.htm#htc</a></td>
+<td>Approx £9 - £15</td>
+</tr>
+<tr>
+<td align="left">JTAG HTC adapters</td>
+<td><a href="https://multi-com.eu/shrt-MTPwlRJ3p">https://multi-com.eu/shrt-MTPwlRJ3p</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG Huawei adapters</td>
+<td><a href="https://multi-com.eu/shrt-7zXhKjifd">https://multi-com.eu/shrt-7zXhKjifd</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG LG adapters</td>
+<td><a href="https://multi-com.eu/shrt-e4AduICO">https://multi-com.eu/shrt-e4AduICO</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG Motorola adapters</td>
+<td><a href="https://multi-com.eu/shrt-In6l6zNmv">https://multi-com.eu/shrt-In6l6zNmv</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG Nokia adapters</td>
+<td><a href="https://multi-com.eu/shrt-ce1uaw3b2">https://multi-com.eu/shrt-ce1uaw3b2</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG Panasonic adapters</td>
+<td><a href="https://multi-com.eu/shrt-CgcNOynVQ">https://multi-com.eu/shrt-CgcNOynVQ</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG Sagem adapters</td>
+<td><a href="https://multi-com.eu/shrt-eZ1IGoO0v">https://multi-com.eu/shrt-eZ1IGoO0v</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">Jtag Adapters For Samsung</td>
+<td><a href="http://www.fonefunshop.co.uk/Unlocking/sagemjigs.htm#samsung">http://www.fonefunshop.co.uk/Unlocking/sagemjigs.htm#samsung</a></td>
+<td>Approx £9 - £15</td>
+</tr>
+<tr>
+<td align="left">JTAG Samsung adapters</td>
+<td><a href="https://multi-com.eu/shrt-hrhxxMdv4">https://multi-com.eu/shrt-hrhxxMdv4</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG Sendo adapters</td>
+<td><a href="https://multi-com.eu/shrt-WCxdK690R">https://multi-com.eu/shrt-WCxdK690R</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">Jtag Adapters For Sony / SonyEricsson</td>
+<td><a href="http://www.fonefunshop.co.uk/Unlocking/sagemjigs.htm#se">http://www.fonefunshop.co.uk/Unlocking/sagemjigs.htm#se</a></td>
+<td>Approx £9 - £15</td>
+</tr>
+<tr>
+<td align="left">JTAG Sony adapters</td>
+<td><a href="https://multi-com.eu/shrt-RS5Utfpw">https://multi-com.eu/shrt-RS5Utfpw</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG SonyEricsson adapters</td>
+<td><a href="https://multi-com.eu/shrt-7HEUvbhq0">https://multi-com.eu/shrt-7HEUvbhq0</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">JTAG ZTE adapters</td>
+<td><a href="https://multi-com.eu/shrt-keDsKh3K">https://multi-com.eu/shrt-keDsKh3K</a></td>
+<td>\~8-15 EUR</td>
+</tr>
+<tr>
+<td align="left">Jtag Adapters For Other models</td>
+<td><a href="http://www.fonefunshop.co.uk/Unlocking/sagemjigs.htm#other">http://www.fonefunshop.co.uk/Unlocking/sagemjigs.htm#other</a></td>
+<td>Approx £9 - £15</td>
+</tr>
+</tbody>
+</table>
+<p><strong>eMMC ISP Specific Equipment List</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th>Info</th>
+<th>Estimated Cost (CAD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">VR-TABLE Forensic Tool for JTAG/EMMC/FBUS Tool</td>
+<td><a href="http://vr-table.com">http://vr-table.com</a></td>
+<td>\~899-1200 EUR</td>
+</tr>
+<tr>
+<td align="left">Inspection camera for VR-Table - VGA 2Mpx with holder</td>
+<td><a href="https://multi-com.eu/shrt-dbgo7ckfp">https://multi-com.eu/shrt-dbgo7ckfp</a></td>
+<td>229 EUR</td>
+</tr>
+<tr>
+<td align="left">Universal eMMC PullUp PU cable for ISP eMMC to VR-Table</td>
+<td><a href="https://multi-com.eu/shrt-3uakwxlCJ">https://multi-com.eu/shrt-3uakwxlCJ</a></td>
+<td>20 EUR</td>
+</tr>
+<tr>
+<td align="left">Set of 10 high-precision probes with movable pins VR-064 1mm / 69mm to VR-Table</td>
+<td><a href="https://multi-com.eu/shrt-lwSCDEro">https://multi-com.eu/shrt-lwSCDEro</a></td>
+<td>89 EUR</td>
+</tr>
+<tr>
+<td align="left">Set of 10 ultra high-precision probes VR-070m 0,50mm/73mm to R-Table</td>
+<td><a href="https://multi-com.eu/shrt-8dUoankmt">https://multi-com.eu/shrt-8dUoankmt</a></td>
+<td>99 EUR</td>
+</tr>
+<tr>
+<td align="left">Set of 10 standard probes VR-070 1mm/73mm to VR-Table</td>
+<td><a href="https://multi-com.eu/shrt-yrCK6Uh1">https://multi-com.eu/shrt-yrCK6Uh1</a></td>
+<td>30 EUR</td>
+</tr>
+<tr>
+<td align="left">Adapter EMMC for Riff BOX - RC1000</td>
+<td><a href="https://multi-com.eu/shrt-MMxr5shud">https://multi-com.eu/shrt-MMxr5shud</a></td>
+<td>25 EUR</td>
+</tr>
+<tr>
+<td align="left">Adapter EMMC/JTAG ATF v2 5in1 GPG</td>
+<td><a href="https://multi-com.eu/shrt-Yt3fJHdtg">https://multi-com.eu/shrt-Yt3fJHdtg</a></td>
+<td>20 EUR</td>
+</tr>
+<tr>
+<td align="left">EMMC adapter for Easy Z3x JTAG Box</td>
+<td><a href="https://multi-com.eu/,details,id_pr,13278,key,emmc-adapter-for-easy-z3x-jtag-box,smenu,forensic_tools.html">https://multi-com.eu/,details,id_pr,13278,key,emmc-adapter-for-easy-z3x-jtag-box,smenu,forensic_tools.html</a></td>
+<td>12 EUR</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Chip-Off Specific Equipment List</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th>Info</th>
+<th>Estimated Cost (CAD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Wagner HT1000 Heat Gun</td>
+<td><a href="http://www.wagnerspraytech.com/portal/ht1000_en_spray,362096,358970.html">http://www.wagnerspraytech.com/portal/ht1000_en_spray,362096,358970.html</a></td>
+<td>\$30</td>
+</tr>
+<tr>
+<td align="left">Heat Gun stand</td>
+<td><a href="http://www.ibreakityoufixit.com/shop/air-gun-holder">http://www.ibreakityoufixit.com/shop/air-gun-holder</a></td>
+<td>\$60</td>
+</tr>
+<tr>
+<td align="left">UP-828 Programmer</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98622_UP-828_Programmer.html">http://www.fonefunshop.co.uk/cable_picker/98622_UP-828_Programmer.html</a></td>
+<td>Approx. £1,400</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter VBGA529</td>
+<td>Galaxy Note 4 - <a href="http://www.fonefunshop.co.uk/cable_picker/99471_UP-828_Adapter_VBGA529.html">http://www.fonefunshop.co.uk/cable_picker/99471_UP-828_Adapter_VBGA529.html</a></td>
+<td>Approx. £470</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter BGA110</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98694_UP-828_Adapter_BGA110.html">http://www.fonefunshop.co.uk/cable_picker/98694_UP-828_Adapter_BGA110.html</a></td>
+<td>Approx. £260</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter BGA88 - U08881</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/99429_UP-828_Adapter_BGA88_-_U08881.html">http://www.fonefunshop.co.uk/cable_picker/99429_UP-828_Adapter_BGA88_-_U08881.html</a></td>
+<td>Approx. £200</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter FBGA167</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98625_UP-828_Adapter_FBGA167.html">http://www.fonefunshop.co.uk/cable_picker/98625_UP-828_Adapter_FBGA167.html</a></td>
+<td>Approx. £290</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter FBGA63 U08631</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98822_UP-828_Adapter_FBGA63_U08631.html">http://www.fonefunshop.co.uk/cable_picker/98822_UP-828_Adapter_FBGA63_U08631.html</a></td>
+<td>Approx. £150</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter SBGA152</td>
+<td>Blackberry - <a href="http://www.fonefunshop.co.uk/cable_picker/98624_UP-828_Adapter_SBGA152.html">http://www.fonefunshop.co.uk/cable_picker/98624_UP-828_Adapter_SBGA152.html</a></td>
+<td>Approx. £372</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter SBGA199</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98720_UP-828_Adapter_SBGA199.html">http://www.fonefunshop.co.uk/cable_picker/98720_UP-828_Adapter_SBGA199.html</a></td>
+<td>Approx. £340</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter U11371 FBGA137</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/99231_UP-828_Adapter_U11371_FBGA137.html">http://www.fonefunshop.co.uk/cable_picker/99231_UP-828_Adapter_U11371_FBGA137.html</a></td>
+<td>Approx. £265</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter VBGA169E</td>
+<td>BlackBerry and Android - <a href="http://www.fonefunshop.co.uk/cable_picker/98719_UP-828_Adapter_VBGA169E.html">http://www.fonefunshop.co.uk/cable_picker/98719_UP-828_Adapter_VBGA169E.html</a></td>
+<td>Approx. £320</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter VBGA221 - U05221</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/99370_UP-828_Adapter_VBGA221_-_U05221.html">http://www.fonefunshop.co.uk/cable_picker/99370_UP-828_Adapter_VBGA221_-_U05221.html</a></td>
+<td>Approx. £330</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter VBGA40</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98623_UP-828_Adapter_VBGA40.html">http://www.fonefunshop.co.uk/cable_picker/98623_UP-828_Adapter_VBGA40.html</a></td>
+<td>Approx. £240</td>
+</tr>
+<tr>
+<td align="left">UP-828 Adapter VBGA133</td>
+<td>iPhone 4</td>
+<td>Approx. \$600 - \$1000 depending on source</td>
+</tr>
+<tr>
+<td align="left">Sireda eMMC Burn-In Socket (size 11 x 10mm)</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98728_Sireda_eMMC_Burn-In_Socket_(size_11_x_10mm).html">http://www.fonefunshop.co.uk/cable_picker/98728_Sireda_eMMC_Burn-In_Socket_(size_11_x_10mm).html</a></td>
+<td>Approx. £168</td>
+</tr>
+<tr>
+<td align="left">Sireda eMMC Burn-In Socket (size 11.5 x 13mm)</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98726_Sireda_eMMC_Burn-In_Socket_(size_11.5_x_13mm">http://www.fonefunshop.co.uk/cable_picker/98726_Sireda_eMMC_Burn-In_Socket_(size_11.5_x_13mm</a>).html</td>
+<td>Approx. £168</td>
+</tr>
+<tr>
+<td align="left">Sireda eMMC Burn-In Socket (size 12 x 16mm)</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98708_Sireda_eMMC_Burn-In_Socket_(size_12_x_16mm).html">http://www.fonefunshop.co.uk/cable_picker/98708_Sireda_eMMC_Burn-In_Socket_(size_12_x_16mm).html</a></td>
+<td>Approx. £168</td>
+</tr>
+<tr>
+<td align="left">Sireda eMMC Burn-In Socket (size 12 x 18mm)</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98729_Sireda_eMMC_Burn-In_Socket_(size_12_x_18mm).html">http://www.fonefunshop.co.uk/cable_picker/98729_Sireda_eMMC_Burn-In_Socket_(size_12_x_18mm).html</a></td>
+<td>Approx. £168</td>
+</tr>
+<tr>
+<td align="left">Sireda eMMC Burn-In Socket (size 14 x 18mm)</td>
+<td><a href="http://www.fonefunshop.co.uk/cable_picker/98727_Sireda_eMMC_Burn-In_Socket_(size_14_x_18mm).html">http://www.fonefunshop.co.uk/cable_picker/98727_Sireda_eMMC_Burn-In_Socket_(size_14_x_18mm).html</a></td>
+<td>Approx. £168</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes</strong></p>
+<p>1. The UP-828 driver is not signed and therefore doesn't work by
+default in Windows 7 64-bit. The programmer is identified as a as a
+Cypess Semiconductor Corp. CY7C68013. The signed Windows 7 64-bit driver
+can be installed by downloading and installing the Cypress EZ-USB FX2LP
+Development Kit, then using the CyUSB.sys driver found in
+'<installdir>\CY3684_EZ-USB_FX2LP_DVK\1.0\Drivers\cyusbfx1_fx2lp' for
+the UP-828 programmer.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+    
+  </body>
+</html>

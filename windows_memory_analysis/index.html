@@ -1,0 +1,834 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+    
+    
+      
+        <title>Windows memory analysis - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-types" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Windows memory analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../community/" class="md-tabs__link">
+        Community
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributions_mediawiki/" class="md-tabs__link">
+        Contributions
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tags/" class="md-tabs__link">
+        Tags
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Community
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Community" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Contributions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Contributions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributions_mediawiki/" class="md-nav__link">
+        Contributions Mediawiki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tags
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tags" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tags
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    Data types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-memory-images" class="md-nav__link">
+    Sample Memory Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliography" class="md-nav__link">
+    Bibliography
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-links" class="md-nav__link">
+    External Links
+  </a>
+  
+    <nav class="md-nav" aria-label="External Links">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel-debugging" class="md-nav__link">
+    Kernel debugging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volatility-labs" class="md-nav__link">
+    Volatility Labs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windbg" class="md-nav__link">
+    WinDBG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+  <nav class="md-tags" >
+    
+      
+      
+        <a href="../tags/#bibliographies" class="md-tag">Bibliographies</a>
+      
+    
+  </nav>
+
+
+
+
+  <h1>Windows memory analysis</h1>
+
+<p>Analysis of <a href="../physical_memory/">physical memory</a> from
+<a href="../windows/">Windows</a> systems can yield significant information
+about the target operating system. This field is still very new, but
+holds great promise.</p>
+<h2 id="data-types">Data types</h2>
+<p>Data types typical to the WINAPI are documented by Microsoft in MS-DTYP
+<a href="http://msdn.microsoft.com/en-us/library/cc230273.aspx">1</a>.</p>
+<h2 id="sample-memory-images">Sample Memory Images</h2>
+<p>Getting started with memory analysis can be difficult without some known
+images to practice with.</p>
+<ul>
+<li>The 2005 <a href="../digital_forensic_research_workshop/">Digital Forensic Research
+  Workshop</a> <a href="http://www.dfrws.org/2005/challenge/">Memory
+  Analysis Challenge</a> published
+  two Windows 2000 Service Pack 1 memory images with some
+  <a href="../malware/">malware</a> installed.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>The <a href="http://dftt.sourceforge.net/">Digital Forensics Tool Testing</a>
+  project has published a few <a href="http://dftt.sourceforge.net/test13/index.html">Windows memory
+  images</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>The <a href="cfreds_project.md">CFReDS Project</a> has created some
+  <a href="http://www.cfreds.nist.gov/mem/memory-images.rar">downloadable memory
+  images</a>.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>A number of RAM images can be downloaded from
+  <a href="http://forensic.belkasoft.com/bfs/en/download.asp">http://forensic.belkasoft.com/bfs/en/download.asp</a>. Images include
+  ones with Gmail emails, Skype activity, Paltalk chats, browser URLs
+  etc.</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../memory_analysis/">Memory analysis</a></li>
+<li><a href="tools:memory_imaging.md">Tools:Memory Imaging</a></li>
+<li><a href="../pagefile.sys/">Pagefile.sys</a></li>
+<li><a href="http://msdn.microsoft.com/en-us/library/aa366778%28VS.85%29.aspx">Memory Limits for Windows
+  Releases</a>,
+  Microsoft MSDN.</li>
+</ul>
+<h2 id="history">History</h2>
+<p>During the 1990s, it became a <a href="best_practice.md">best practice</a>
+to capture a <a href="tools:memory_imaging.md">memory image</a> during
+<a href="../incident_response/">incident response</a>. At the time, the only
+way to analyze such memory images was using
+<a href="../strings/">strings</a>. Although this method could reveal
+interesting details about the memory image, there was no way to
+associate what data came from what program, let alone what user.</p>
+<p>In the summer 2005 the <a href="../digital_forensic_research_workshop/">Digital Forensic Research
+Workshop</a> published a
+<em>Memory Analysis Challenge</em>. They distributed two memory images and
+asked researchers to answer a number of questions about a security
+incident. The challenge produced two seminal works. The first, by <a href="chris_betz.md">Chris
+Betz</a>, introduced a tool called
+<a href="memparser.md">memparser</a>. The second, by <a href="../george_garner/">George
+Garner</a> and <a href="robert-jan_mora.md">Robert-Jan
+Mora</a> produced
+<a href="kntlist.md">KnTList</a>.</p>
+<p>At the <a href="../blackhat_%28conference%29/">Blackhat Federal</a> conference
+in March 2007, <a href="../aaron_walters/">AAron Walters</a> and <a href="../nick_petroni/">Nick
+Petroni</a> released a suite called
+<a href="../volatools/">volatools</a>. Although it only worked on <a href="windows_xp.md">Windows
+XP</a> Service Pack 2 images, it was able to produce
+a number of useful data. <a href="../volatools/">volatools</a> was updated
+and re-released as <a href="volatility.md">Volatility</a> in August 2007,
+and is now maintained and distributed by <a href="https://www.volatilesystems.com/">Volatile
+Systems</a>.</p>
+<h2 id="bibliography">Bibliography</h2>
+<p>2012</p>
+<ul>
+<li><a href="http://events.ccc.de/congress/2012/Fahrplan/events/5301.en.html">Defeating Windows memory
+  forensics</a>,
+  by Luka Milkovic, 29C3: 29th Chaos Communication Congress</li>
+</ul>
+<p>2011</p>
+<ul>
+<li><a href="http://prezi.com/goocmfeuiqdf/tracking-stuxnets-footprint-through-memory/">Tracking Stuxnet's Footprint Through
+  Memory</a>,
+  Michael Ligh, Open Memory Forensics Workshop</li>
+</ul>
+<p>2010</p>
+<ul>
+<li><a href="http://dfrws.org/2010/proceedings/2010-307.pdf">Extracting Windows Command Line Details from Physical
+  Memory</a>, Richard
+  Stevens and Eoghan Casey, DFRWS</li>
+</ul>
+<p>2009</p>
+<ul>
+<li><a href="http://www.cc.gatech.edu/~brendan/ccs09_siggen.pdf">Robust Signatures for Kernel Data
+  Structures</a> B.
+  Dolan-Gavitt, et al., ACM Conference on Computer and Communications
+  Security</li>
+<li><a href="http://www.shakacon.org/talks/NFI-Shakacon-win32dd0.3.pdf">Win32dd : Challenges of Windows physical memory acquisition and
+  exploitation</a>,
+  Matthieu Suiche, Netherlands Forensics Institute, Shakacon - June 2009</li>
+</ul>
+<p>2008</p>
+<ul>
+<li><a href="http://citp.princeton.edu/memory/">Lest We Remember: Cold Boot Attacks on Encryption
+  Keys</a>
+  (<a href="http://citp.princeton.edu.nyud.net/pub/coldboot.pdf">PDF</a>), Usenix
+  Security 2008 (Best student paper)</li>
+<li><a href="http://blogs.technet.com/markrussinovich/archive/2008/07/21/3092070.aspx">Pushing the Limits of Windows: Physical
+  Memory</a>,
+  Mark Russinovich, Technet Blogs, July 21, 2008</li>
+<li><a href="http://www.dfrws.org/2008/proceedings/p58-schuster.pdf">The impact of Microsoft Windows pool allocation strategies on memory
+  forensics</a>,
+  Andreas Schuster, DFRWS 2008
+  <a href="http://www.dfrws.org/2008/proceedings/p58-schuster_pres.pdf">[slides</a>]</li>
+<li><a href="http://www.blackhat.com/presentations/bh-federal-06/BH-Fed-06-Burdach/bh-fed-06-burdach-up.pdf">Finding Digital Evidence In Physical
+  Memory</a>,
+  Mariusz Burdach, Black Hat Federal, 2008</li>
+<li><a href="http://www.dfrws.org/2008/proceedings/p52-vanBaar.pdf">Forensic Memory Analysis: Files mapped in
+  memory</a>, Ruud
+  van Baar, DFRWS 2008,
+  <a href="http://www.dfrws.org/2008/proceedings/p52-vanBaar_pres.pdf">[slides</a>]</li>
+<li><a href="http://www.dfrws.org/2008/proceedings/p26-dolan-gavitt.pdf">Forensic Analysis of the Windows Registry in
+  Memory</a>,
+  Brendan Dolan-Gavitt, DFRWS 2008
+  <a href="http://www.dfrws.org/2008/proceedings/p26-dolan-gavitt_pres.pdf">[slides</a>]</li>
+</ul>
+<p>2007</p>
+<ul>
+<li><a href="http://www.first.org/conference/2007/papers/rutkowska-joanna-slides.pdf">Beyond The CPU: Defeating Hardware Based RAM Acquisition (part I: AMD
+  case)</a>,
+  Joanna Rutkowska COSEINC Advanced Malware Labs</li>
+<li><a href="http://www.dfrws.org/2007/proceedings/p114-arasteh.pdf">Forensic Memory Analysis: From Stack and Code to Execution
+  History</a>, Ali
+  Reza Arasteh and Mourad Debbabi, DFRWS 2007</li>
+<li><a href="http://www.dfrws.org/2007/proceedings/p126-schatz.pdf">BodySnatcher: Towards Reliable Volatile Memory Acquisition by
+  Software</a>,
+  Bradley Schatz, DFRWS 2007</li>
+<li><a href="http://www.dfrws.org/2007/proceedings/p62-dolan-gavitt.pdf">The VAD Tree: A Process-Eye View of Physical
+  Memory</a>,
+  Brendan F Dolan-Gavitt, DFRWS 2007</li>
+<li><a href="http://www.friendsglobal.com/papers/FireWire%20Memory%20Dump%20of%20Windows%20XP.pdf">FireWire Memory Dump of a Windows XP Computer: A Forensic
+  Approach</a>,
+  Antonio Martin, 2007</li>
+</ul>
+<p>2006</p>
+<ul>
+<li><a href="http://www.dfrws.org/2006/proceedings/2-Schuster.pdf">Searching for Processes and Threads in Microsoft Windows Memory
+  Dumps</a>, Andreas
+  Schuster, Deutsche Telekom AG, Germany, DFRWS 2006</li>
+<li>Using every part of the buffalo in Windows memory an, Jesse D.
+  Kornblum, DFRWS 2006</li>
+</ul>
+<h2 id="external-links">External Links</h2>
+<ul>
+<li><a href="http://undocumented.ntinternals.net/">NTAPI Undocumented Functions</a></li>
+<li><a href="http://msdn.microsoft.com/en-us/library/cc230273.aspx">MS-DTYP: Windows Data
+  Types</a></li>
+<li><a href="http://www.codemachine.com/article_kernelstruct.html">Catalog of key Windows kernel data
+  structures</a></li>
+<li><a href="http://cyberspeak.libsyn.com/index.php?post_id=98104">Jesse Kornblum Memory Analysis discussion on
+  Cyberspeak</a></li>
+<li><a href="http://www.4tphi.net/fatkit/#links">Fatkit: Links</a></li>
+<li><a href="http://www.cmlab.csie.ntu.edu.tw/~cathyp/eBooks/WindowsNT/Driver/kernel_debugging_tutorial.pdf">Kernel Debugging with
+  WinDbg</a></li>
+<li><a href="https://www.blackhat.com/presentations/bh-usa-07/Lindsay/Whitepaper/bh-usa-07-lindsay-WP.pdf">Attacking the Windows
+  kernel</a>,
+  by Jonathan Lindsay, BlackHat 2007</li>
+<li><a href="http://dfrws.org/2007/proceedings/p62-dolan-gavitt.pdf">The VAD tree: A process-eye view of physical
+  memory</a>, by
+  <a href="brendan_dolan-gavitt.md">Brendan Dolan-Gavitt</a>, DFRWS 2007</li>
+<li><a href="http://fumalwareanalysis.blogspot.ch/2011/12/malware-analysis-tutorial-7-exploring.html">Malware Analysis Tutorial 7: Exploring Kernel Data
+  Structure</a>,
+  by Dr. Fu, December 14, 2011</li>
+<li><a href="http://rekall-forensic.blogspot.com/2014/10/windows-virtual-address-translation-and.html">Windows Virtual Address Translation and the
+  Pagefile</a>,
+  by <a href="../michael_cohen/">Michael Cohen</a>, October 31, 2014</li>
+</ul>
+<h3 id="kernel-debugging">Kernel debugging</h3>
+<ul>
+<li><a href="http://advancedwindowsdebugging.com/book/contents.htm">Advanced Windows
+  Debugging</a>, by
+  Mario Hewardt, Daniel Pravat, November 8, 2007</li>
+<li><a href="http://www.informit.com/articles/article.aspx?p=1081496">Advanced Windows Debugging: Memory Corruption Part
+  II—Heaps</a>, by
+  Daniel Pravat and Mario Hewardt, November 9, 2007</li>
+<li><a href="http://moyix.blogspot.ch/2008/04/finding-kernel-global-variables-in.html">Finding Kernel Global Variables in
+  Windows</a>,
+  by Brendan Dolan-Gavitt, April 16, 2008</li>
+<li><a href="http://scudette.blogspot.com/2012/11/finding-kernel-debugger-block.html">Finding the Kernel Debugger
+  Block</a>,
+  by Michael Cohen, November 18, 2012</li>
+<li><a href="http://rekall-forensic.blogspot.ch/2014/02/do-we-need-kernel-debugging-block.html">Do we need the Kernel Debugging
+  Block?</a>,
+  by Michael Cohen, February 21, 2014</li>
+</ul>
+<h3 id="volatility-labs"><a href="http://volatility-labs.blogspot.com/">Volatility Labs</a></h3>
+<ul>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/movp-11-logon-sessions-processes-and.html">MoVP 1.1 Logon Sessions, Processes, and
+  Images</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/movp-12-window-stations-and-clipboard.html">MoVP 1.2 Window Stations and Clipboard
+  Malware</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/movp-13-desktops-heaps-and-ransomware.html">MoVP 1.3 Desktops, Heaps, and
+  Ransomware</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/movp-21-atoms-new-mutex-classes-and-dll.html">MoVP 2.1 Atoms (The New Mutex), Classes and DLL
+  Injection</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/movp-22-malware-in-your-windows.html">MoVP 2.2 Malware In Your
+  Windows</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/movp-23-event-logs-and-service-sids.html">MoVP 2.3 Event Logs and Service
+  SIDs</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/movp-31-detecting-malware-hooks-in.html">MoVP 3.1 Detecting Malware Hooks in the Windows GUI
+  Subsystem</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/howto-scan-for-internet-cachehistory.html">HowTo: Scan for Internet Cache/History and
+  URLs</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/movp-32-shellbags-in-memory-setregtime.html">MoVP 3.2 Shellbags in Memory, SetRegTime, and TrueCrypt
+  Volumes</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/movp-33-analyzing-user-handles-and.html">MoVP 3.3 Analyzing USER Handles and the Win32k.sys
+  Gahti</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/09/movp-34-recovering-tagclipdata-whats-in.html">MoVP 3.4: Recovering tagCLIPDATA: What's In Your
+  Clipboard?</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/10/movp-41-detecting-malware-with-gdi.html">MoVP 4.1 Detecting Malware with GDI Timers and
+  Callbacks</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/10/movp-43-taking-screenshots-from-memory.html">MoVP 4.2 Taking Screenshots from Memory
+  Dumps</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/10/movp-44-cache-rules-everything-around.html">MoVP 4.4 Cache Rules Everything Around
+  Me(mory)</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/10/omfw-2012-malware-in-windows-gui.html">OMFW 2012: Malware In the Windows GUI
+  Subsystem</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/10/omfw-2012-reconstructing-mbr-and-mft.html">OMFW 2012: Reconstructing the MBR and MFT from
+  Memory</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/10/omfw-2012-analysis-of-process-token.html">OMFW 2012: The Analysis of Process Token
+  Privileges</a></li>
+<li><a href="http://volatility-labs.blogspot.com/2012/10/omfw-2012-mining-pfn-database-for.html">OMFW 2012: Mining the PFN Database for Malware
+  Artifacts</a></li>
+</ul>
+<h3 id="windbg">WinDBG</h3>
+<ul>
+<li><a href="http://blog.opensecurityresearch.com/2013/12/getting-started-with-windbg-part-1.html">Getting Started with WinDBG - Part
+  1</a>,
+  by <a href="brad_antoniewicz.md">Brad Antoniewicz</a>, December 17, 2013</li>
+<li><a href="http://blog.opensecurityresearch.com/2013/12/getting-started-with-windbg-part-2.html">Getting Started with WinDBG - Part
+  2</a>,
+  by <a href="brad_antoniewicz.md">Brad Antoniewicz</a>, December 24, 2013</li>
+<li><a href="http://blog.opensecurityresearch.com/2013/12/getting-started-with-windbg-part-3.html">Getting Started with WinDBG - Part
+  3</a>,
+  by <a href="brad_antoniewicz.md">Brad Antoniewicz</a>, December 31, 2013</li>
+<li><a href="http://www.msuiche.net/2014/01/12/extengcpp-part-1/">Developing WinDbg ExtEngCpp Extension in C++ – Introduction – Part
+  1</a>, by <a href="matt_suiche.md">Matt
+  Suiche</a>, January 12, 2014</li>
+<li><a href="http://www.msuiche.net/2014/01/15/developing-windbg-extengcpp-extension-in-c-com-interface/">Developing WinDbg ExtEngCpp Extension in C++ – COM Interface – Part
+  2</a>,
+  by <a href="matt_suiche.md">Matt Suiche</a>, January 15, 2014</li>
+<li><a href="http://www.msuiche.net/2014/01/20/developing-windbg-extengcpp-extension-in-c-memory-debugger-markup-language-dml-part-3/">Developing WinDbg ExtEngCpp Extension in C++ – Memory &amp; Debugger
+  Markup Language (DML) – Part
+  3</a>,
+  by <a href="matt_suiche.md">Matt Suiche</a>, January 20, 2014</li>
+<li><a href="https://github.com/msuiche/SwishDbgExt">SwishDbgExt - Incident Response &amp; Digital Forensics Debugging
+  Extension</a></li>
+</ul>
+<p><a href="category:bibliographies.md">Category:Bibliographies</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+    
+  </body>
+</html>

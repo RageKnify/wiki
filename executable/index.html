@@ -1,0 +1,762 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+    
+    
+      
+        <title>Executable - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#external-links" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Executable
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../community/" class="md-tabs__link">
+        Community
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributions_mediawiki/" class="md-tabs__link">
+        Contributions
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tags/" class="md-tabs__link">
+        Tags
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Community
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Community" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Contributions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Contributions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributions_mediawiki/" class="md-nav__link">
+        Contributions Mediawiki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tags
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tags" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tags
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#external-links" class="md-nav__link">
+    External Links
+  </a>
+  
+    <nav class="md-nav" aria-label="External Links">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elf" class="md-nav__link">
+    ELF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mz-pecoff" class="md-nav__link">
+    MZ, PE/COFF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dbg-pdb" class="md-nav__link">
+    DBG, PDB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minidump" class="md-nav__link">
+    Minidump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mach-o" class="md-nav__link">
+    Mach-O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packers" class="md-nav__link">
+    Packers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mz-pecoff_1" class="md-nav__link">
+    MZ, PE/COFF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdb" class="md-nav__link">
+    PDB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minidump_1" class="md-nav__link">
+    Minidump
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+  <nav class="md-tags" >
+    
+      
+      
+        <a href="../tags/#file-formats" class="md-tag">File Formats</a>
+      
+    
+      
+      
+        <a href="../tags/#windows" class="md-tag">Windows</a>
+      
+    
+      
+      
+        <a href="../tags/#linux" class="md-tag">Linux</a>
+      
+    
+      
+      
+        <a href="../tags/#freebsd" class="md-tag">FreeBSD</a>
+      
+    
+      
+      
+        <a href="../tags/#netbsd" class="md-tag">NetBSD</a>
+      
+    
+      
+      
+        <a href="../tags/#openbsd" class="md-tag">OpenBSD</a>
+      
+    
+      
+      
+        <a href="../tags/#solaris" class="md-tag">Solaris</a>
+      
+    
+      
+      
+        <a href="../tags/#chromeos" class="md-tag">ChromeOS</a>
+      
+    
+      
+      
+        <a href="../tags/#macos" class="md-tag">MacOS</a>
+      
+    
+      
+      
+        <a href="../tags/#binary" class="md-tag">Binary</a>
+      
+    
+  </nav>
+
+
+
+
+  <h1>Executable</h1>
+
+<p>An executable file is used to perform tasks according to encoded
+instructions. Executable files are sometimes also referred to as
+binaries which technically can be considered a sub class of executable
+files.</p>
+<p>There are multiple families of executable files:</p>
+<ul>
+<li>Scripts; e.g. shell scripts, batch scripts (.bat)</li>
+<li>DOS, Windows executable files (.exe) which can be of various formats
+  like: MZ, PE/COFF, NE</li>
+<li>EFI fat binary; roughly a 48-byte header and 2x MZ-PE/COFF</li>
+<li>ELF</li>
+<li>Mach-O</li>
+</ul>
+<h2 id="external-links">External Links</h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Executable">Wikipedia: Executable</a></li>
+<li><a href="http://duartes.org/gustavo/blog/post/anatomy-of-a-program-in-memory/">Anatomy of a Program in
+  Memory</a>,
+  by Gustavo Duarte, January 27, 2009</li>
+<li><a href="ftp://ftp.cs.wisc.edu/paradyn/papers/Rosenblum10prov.pdf">Extracting Compiler Provenance from Program
+  Binaries</a>,
+  by Nathan E. Rosenblum, Barton P. Miller, Xiaojin Zhu, June 2010</li>
+<li><a href="http://duartes.org/gustavo/blog/post/journey-to-the-stack/">Journey to the Stack, Part
+  I</a>, by
+  Gustavo Duarte, March 10, 2014</li>
+</ul>
+<h3 id="elf">ELF</h3>
+<ul>
+<li><a href="http://robinhoksbergen.com/papers/howto_elf.html">Manually Creating an ELF
+  Executable</a>, by
+  Robin Hoksbergen</li>
+</ul>
+<h3 id="mz-pecoff">MZ, PE/COFF</h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Portable_Executable">Wikipedia: Portable
+  Executable</a></li>
+<li><a href="http://msdn.microsoft.com/en-us/windows/hardware/gg463119.aspx">Microsoft PE and COFF
+  Specification</a></li>
+<li><a href="http://msdn.microsoft.com/en-us/magazine/ms809762.aspx">Peering Inside the PE: A Tour of the Win32 Portable Executable File
+  Format</a>, by
+  Matt Pietrek, March 1994</li>
+<li><a href="http://www.microsoft.com/msj/0797/hood0797.aspx">Under the Hood</a>, by
+  Matt Pietrek, July 1997</li>
+<li><a href="http://msdn.microsoft.com/en-us/magazine/cc301805.aspx">An In-Depth Look into the Win32 Portable Executable File
+  Format</a>, by
+  Matt Pietrek, February 2002</li>
+<li><a href="https://googledrive.com/host/0B3fBvzttpiiSd1dKQVU0WGVESlU/Executable%20(EXE)%20file%20format.pdf">MZ, PE-COFF executable file format
+  (EXE)</a>,
+  by the <a href="libexe.md">libexe project</a>, October 2011</li>
+<li><a href="http://ho.ax/posts/2012/02/carving-up-efi-fat-binaries/">Carving up EFI fat
+  binaries</a>, by
+  snare, February 24, 2012</li>
+<li><a href="http://seclists.org/fulldisclosure/2013/Oct/157">The Internal of Reloc
+  .text</a>, Full
+  Disclosure Mailing list, October 21, 2013</li>
+</ul>
+<h3 id="dbg-pdb">DBG, PDB</h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Program_database">Wikipedia: Program
+  database</a></li>
+<li><a href="http://www.debuginfo.com/articles/debuginfomatch.html">Matching Debug
+  Information</a>,
+  by debuginfo.com</li>
+<li><a href="http://support.microsoft.com/kb/121366">Description of the .PDB files and of the .DBG
+  files</a>, by
+  <a href="../microsoft/">Microsoft</a></li>
+<li>[<a href="http://msdn.microsoft.com/en-us/library/ff553493(v=vs.85">http://msdn.microsoft.com/en-us/library/ff553493(v=vs.85</a>).aspx
+  Public and Private Symbols], by <a href="../microsoft/">Microsoft</a></li>
+<li>[<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms679293(v=vs.85">http://msdn.microsoft.com/en-us/library/windows/desktop/ms679293(v=vs.85</a>).aspx
+  DbgHelp Structures], by <a href="../microsoft/">Microsoft</a></li>
+<li><a href="http://web.archive.org/web/20070915060650/http://www.x86.org/ftp/manuals/tools/sym.pdf">Internet Archive: Microsoft Symbol and Type
+  Information</a>,
+  by <a href="../microsoft/">Microsoft</a></li>
+<li><a href="http://pierrelib.pagesperso-orange.fr/exec_formats/MS_Symbol_Type_v1.0.pdf">Microsoft Symbol and Type
+  Information</a></li>
+<li><a href="https://code.google.com/p/pdbparse/wiki/StreamDescriptions">Stream
+  Descriptions</a>,
+  <a href="https://code.google.com/p/pdbparse/">pdbparse project</a></li>
+<li><a href="http://sourceforge.net/p/mingw-w64/code/HEAD/tree/experimental/tools/libmsdebug/">libmsdebug</a>,
+  by the <a href="mingw.md">MinGW project</a></li>
+<li><a href="http://moyix.blogspot.com/2007/10/types-stream.html">The Types
+  Stream</a>, by
+  <a href="brendan_dolan-gavitt.md">Brendan Dolan-Gavitt</a>, October 4,
+  2007</li>
+</ul>
+<h3 id="minidump">Minidump</h3>
+<ul>
+<li>[<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms680378(v=vs.85">http://msdn.microsoft.com/en-us/library/windows/desktop/ms680378(v=vs.85</a>).aspx
+  MSDN: MINIDUMP_HEADER structure]</li>
+<li><a href="https://code.google.com/p/google-breakpad/source/browse/trunk/src/google_breakpad/common/minidump_format.h">minidump_format.h</a>,
+  by <a href="google.md">Google</a>, 2006</li>
+<li><a href="http://moyix.blogspot.com/2008/05/parsing-windows-minidumps.html">Parsing Windows
+  Minidumps</a>,
+  by <a href="brendan_dolan-gavitt.md">Brendan Dolan-Gavitt</a>, May 7,
+  2008</li>
+<li><a href="http://web.archive.org/web/20110814041817/http://www.stackhash.com/blog/post/Format-of-a-minidump-(mdmp)-file.aspx">Format of a minidump (mdmp)
+  file</a>,
+  Internet Archive: StackHash blog, May 16, 2011</li>
+</ul>
+<h3 id="mach-o">Mach-O</h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Mach-O">Wikipedia: Mach-O</a></li>
+</ul>
+<h3 id="packers">Packers</h3>
+<ul>
+<li><a href="http://www.woodmann.com/crackz/Packers.htm">Packers &amp; Unpackers</a></li>
+</ul>
+<h2 id="tools">Tools</h2>
+<h3 id="mz-pecoff_1">MZ, PE/COFF</h3>
+<ul>
+<li><a href="https://code.google.com/p/pefile/">pefile</a>, multi-platform Python
+  module to read and work with Portable Executable (aka PE) files</li>
+</ul>
+<h3 id="pdb">PDB</h3>
+<ul>
+<li><a href="https://code.google.com/p/pdbparse/">pdbparse</a>, Open-source parser
+  for Microsoft debug symbols (PDB files)</li>
+</ul>
+<h3 id="minidump_1">Minidump</h3>
+<ul>
+<li><a href="http://support.microsoft.com/kb/315271">Dumpchk.exe</a>, by
+  <a href="../microsoft/">Microsoft</a></li>
+<li><a href="http://amnesia.gtisc.gatech.edu/~moyix/minidump.py">minidump.py</a>, by
+  <a href="brendan_dolan-gavitt.md">Brendan Dolan-Gavitt</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+    
+  </body>
+</html>
